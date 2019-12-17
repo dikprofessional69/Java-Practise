@@ -1,0 +1,24 @@
+class First
+{
+
+	public static void main(String args[])
+	{
+		numbers obj=new numbers();	
+		System.out.println(obj.getnum());
+		
+	}
+
+}
+
+class numbers
+{
+private int num;
+	numbers()
+	{
+	num=7;
+	}
+public int getnum()
+	{
+	return num;
+	}
+}
