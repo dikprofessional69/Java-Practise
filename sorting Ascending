@@ -1,0 +1,36 @@
+class Array
+	{
+	int num[]={12,5,7,8,10,13,3,1,16};
+	}
+  
+ class First
+{
+//Selection sort
+//num={12,5,7,8,10,13,3,1,16};
+	public static void main(String args[])
+	{
+		Array obj=new Array();	
+		int len=obj.num.length;
+		for(int i=0;i<len;i++)
+		{
+			for(int j=0;j<len;j++)
+			{
+			if(obj.num[i]<obj.num[j])
+				{
+				int temp1=obj.num[i];
+				int temp2=obj.num[j];
+				obj.num[i]=temp2;
+				obj.num[j]=temp1;
+				}	
+			}
+		
+		
+		}
+		for(int i=0;i<len;i++)
+		{
+		System.out.println(obj.num[i]);
+		}
+
+	}
+
+}
