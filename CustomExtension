@@ -1,0 +1,44 @@
+package practise;
+
+public class First {
+public static void main(String args[]) {
+							try {
+							Semester semester=new Semester(-9);
+							}
+							catch(SemesterError se) {
+								System.out.println(se.getMessage());
+								
+							}
+										}
+					}
+
+
+package practise;
+
+public class Semester {
+int sem;
+public Semester (int s) throws SemesterError{
+	if(s>=1 && s<=8) 
+			{
+			this.sem=s;
+			System.out.println("You are in the correct semester");
+			}
+	else
+		{
+		throw new SemesterError("Semester cAN ONLY BE s>=1 or s<=8");
+		}
+}
+}
+
+
+
+
+package practise;
+
+public class SemesterError extends Exception {
+	public SemesterError(String s) {
+		super(s);
+		
+	}
+
+}
