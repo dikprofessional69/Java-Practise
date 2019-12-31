@@ -25,7 +25,7 @@ public Semester (int s) throws SemesterError{
 			}
 	else
 		{
-		throw new SemesterError("Semester cAN ONLY BE s>=1 or s<=8");
+		throw new SemesterError("Semester cAN ONLY BE s>=1 and s<=8");
 		}
 }
 }
