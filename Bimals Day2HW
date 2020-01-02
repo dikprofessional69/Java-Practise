@@ -1,0 +1,104 @@
+package driver;
+import service.ProductService;
+import model.Product;
+public class RunProduct {
+	public static void main(String args[]) 
+	
+					{
+		ProductService ps=new ProductService();
+		Product p=new Product();
+		p=ps.getProduct("Rolex",69,180000);
+		System.out.println(p);
+		ps.changeProductName(p,"Ford");
+		System.out.println(p);
+		ps.changePrice(p, 96000);
+		System.out.println(p);
+					}
+	/*
+	 * Steps:
+	 * 1. First create POJO/beans/model
+	 * 
+	 * 2. Then create service class with all the functions to manipulate Product
+	 * class
+	 * 
+	 * 3. Use service class methods in Driver class
+	 *    
+	 *    
+	 *    i. call getProduct of service class and hold it in reference/variable
+	 *    ii. print the object
+	 *    iii. change its name
+	 *    iv. print the object
+	 *    v. change its price
+	 *    vi. print the object
+	 *     
+	 * 
+	 * 
+	 * 
+	 * Note : Search and read "Mutable and non-Mutable data types in Java"
+	 * 
+	 */
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+package service;
+
+import model.Product;
+
+public class ProductService {
+
+	 
+	     public Product getProduct(String name,int id,double price){
+	            Product product=new Product();
+	            product.setName(name);   // create product obj
+	            product.setId(id);
+	            product.setPrice(price);	//set its name,id and price
+	            return product;							//return that object
+	    }
+	    
+	   public void changeProductName(Product product,String newName){
+	         	product.setName(newName);          //set new name to product parameter
+	    }
+	    
+	    
+	    public void changePrice(Product product,double newPrice){
+	           product.setPrice(newPrice);
+	    }
+	    
+}
+----------------------------------------------------------------------------------------------------------------------------------
+package model;
+
+public class Product {
+	private String name;
+	private int id;
+	private double price;
+	public Product() {
+		
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	//ovveride means object print garda tesko address bhanda tesko variable values print hunxa
+	@Override
+	public String toString() {
+		return "Product [name=" + name + ", id=" + id + ", price=" + price + "]";
+	}
+
+}
