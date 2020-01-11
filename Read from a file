@@ -1,0 +1,38 @@
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+
+public class FileHandler {
+
+	public static void main(String args[]) 
+								{
+								Scanner in=new Scanner(System.in);
+								FileInputStream f=null;
+								BufferedInputStream b=null;
+								try {
+									f=new FileInputStream("C:\\Users\\ZinonYT\\eclipse-workspace\\file handling\\javatexts.txt");
+									b=new BufferedInputStream(f);
+									int r=0;
+									while(true) 
+											{
+										
+											r=b.read();
+											if(r==-1) {
+												break;
+											}
+											System.out.print((char)r);
+											
+											}
+									
+									
+									}
+								catch (Exception e) {
+									// TODO: handle exception
+								}
+							
+								}
+}
