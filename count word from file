@@ -1,0 +1,48 @@
+
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+
+public class FileHandler {
+
+	public static void main(String args[]) 
+								{
+								Scanner in=new Scanner(System.in);
+								FileReader f=null;
+								BufferedReader b=null;
+								int counter=0;
+								try {
+									
+									f=new FileReader("C:\\Users\\ZinonYT\\eclipse-workspace\\file handling\\javatexts.txt");
+								    b=new BufferedReader(f);
+									String words[];
+								
+									String line=null;
+									while((line=b.readLine())!=null) 
+											{
+										   System.out.println(line);
+											words=line.split(" ");
+											for(String word:words) {
+												if(word.equals("java")) 
+													{
+													counter++;
+													}
+												
+											}
+											
+											
+									
+											}
+									
+								}
+								catch (Exception e) {
+									// TODO: handle exception
+								}
+								System.out.print("tOTAL JAVA="+counter);
+								}
+								}
