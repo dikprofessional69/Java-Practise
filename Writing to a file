@@ -23,7 +23,7 @@ public class FileHandler {
 									byte byt[]=S.getBytes();
 									b.write(byt);	
 									
-									b.close();
+									b.close();//b closed before f always.
 									f.close();
 								}
 									catch(IOException e) {
