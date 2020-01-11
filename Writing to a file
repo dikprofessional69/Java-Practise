@@ -1,0 +1,38 @@
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+
+public class FileHandler {
+
+	public static void main(String args[]) 
+								{
+								Scanner in=new Scanner(System.in);
+								FileOutputStream f=null;
+								BufferedOutputStream b=null;
+							
+								try {
+									f=new FileOutputStream("C:\\Users\\ZinonYT\\eclipse-workspace\\file handling\\rich.txt");
+									b=new BufferedOutputStream(f);
+									System.out.println(f);
+									System.out.println(b);
+									System.out.println("Type:");
+									String S=in.next();
+									byte byt[]=S.getBytes();
+									b.write(byt);	
+									
+									b.close();
+									f.close();
+								}
+									catch(IOException e) {
+												System.out.println(e.getMessage());
+											}
+									finally {
+										//////
+										
+									
+									}
+								}
+	}
