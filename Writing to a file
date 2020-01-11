@@ -14,12 +14,12 @@ public class FileHandler {
 								BufferedOutputStream b=null;
 							
 								try {
-									f=new FileOutputStream("C:\\Users\\ZinonYT\\eclipse-workspace\\file handling\\rich.txt");
+									f=new FileOutputStream("C:\\Users\\ZinonYT\\eclipse-workspace\\file handling\\javatexts.txt");
 									b=new BufferedOutputStream(f);
 									System.out.println(f);
 									System.out.println(b);
 									System.out.println("Type:");
-									String S=in.next();
+									String S=in. nextLine();
 									byte byt[]=S.getBytes();
 									b.write(byt);	
 									
