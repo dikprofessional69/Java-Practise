@@ -1,0 +1,78 @@
+package driver;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+import javax.swing.JFrame;
+
+public class Test {
+	
+	JFrame frame = null;
+	Graphics graphics = null;
+
+	int i=70;
+	int j = 80;
+	Color[] colors = {Color.red, Color.black, Color.blue,Color.white};
+	int colorIndex = 0;
+	
+	public Test() {
+		frame = new JFrame();
+		frame.setBounds(0,0,900,400);
+
+	  
+		
+		frame.setVisible(true);
+		
+		
+		
+	Graphics graphics = frame.getGraphics();
+	graphics.setColor(Color.blue);
+	System.out.println(graphics.getColor());
+		
+//		for(int i=10;i<900;i+=180) {
+//			for(int j=10; j<400;j+=60) {
+//				
+//				graphics.fillOval(i, j,150,50);
+//				System.out.println("i:"+i+" j: "+j);
+//				
+//			}
+//		}
+	
+	
+	frame.addMouseMotionListener(new MouseMotionListener() {
+		
+		@Override
+		public void mouseMoved(MouseEvent e) {
+			i = e.getX();
+			j = e.getY();
+	        
+			graphics.setColor(colors[colorIndex]);
+			colorIndex++;
+			if(colorIndex > 3) {
+				colorIndex = 0;
+			}
+			graphics.fillOval(i, j, 100, 50);
+			
+		}
+		
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
+	
+		
+		frame.setTitle("New TEst Hello");
+	}
+	
+	public static void main(String[] args) {
+		new Test();
+		new Test();
+		new Test();
+	}
+
+}
