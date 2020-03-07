@@ -1,0 +1,69 @@
+package settings;
+
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class MenuProgram implements ActionListener{
+	JFrame jFrame;
+	JMenuBar menuBar;
+	JMenu jMenuFile;
+	JMenuItem jmi1,jmi2,jmi3,jmi4;
+	JTextArea textArea;
+	public static void main(String args[]) {
+		new MenuProgram();
+		
+	}
+	public MenuProgram(){
+		try {
+			jFrame=new JFrame("Larry Tesler");
+			jFrame.setSize(800,800);
+			menuBar=new JMenuBar();
+			jFrame.setJMenuBar(menuBar);
+			
+			jMenuFile=new JMenu("File");
+			menuBar.add(jMenuFile);
+			
+			jmi1=new JMenuItem("Copy");
+			jmi2=new JMenuItem("Cut");
+			jmi3=new JMenuItem("Paste");
+			jmi4=new JMenuItem("Select");
+			
+			jMenuFile.add(jmi1);
+			jMenuFile.add(jmi2);
+			jMenuFile.add(jmi3);
+			jMenuFile.add(jmi4);
+			
+			textArea=new JTextArea();
+			textArea.setBounds(300, 300, 300,60);
+			jFrame.add(textArea);
+			jFrame.setLayout(null);
+			jFrame.setVisible(true);
+			
+			jmi1.addActionListener(this);
+			jmi2.addActionListener(this);
+			jmi3.addActionListener(this);
+			
+		
+		}catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==jmi1) {
+			textArea.copy();
+		}
+		if(e.getSource()==jmi2) {
+			textArea.cut();
+		}
+		if(e.getSource()==jmi3) {
+			textArea.paste();
+		}
+		if(e.getSource()==jmi1) {
+			textArea.selectAll();
+		}
+		
+	}
+}
