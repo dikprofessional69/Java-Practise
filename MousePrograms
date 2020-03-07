@@ -1,0 +1,61 @@
+package calculator;
+
+import java.awt.Button;
+import java.awt.Graphics;
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class calc implements ActionListener,MouseMotionListener {
+	public JFrame jFrame;
+	public JTextField j1,j2;
+	public JButton jb;
+	public Graphics graphics;
+	public static void main(String args[]) {
+	new calc();	
+	}
+	
+	public calc(){
+		try {
+			jFrame=new JFrame("ADDER");
+			jFrame.setSize(500,500);
+			j1=new JTextField();
+			j2=new JTextField();
+			jb=new JButton("ADD");
+					j1.setBounds(200,200,50,50);
+					j2.setBounds(260,200,50,50);
+					jb.setBounds(200,300,100,100);
+			jFrame.add(jb);
+			jFrame.add(j1);
+			jFrame.add(j2);
+			jFrame.setLayout(null);
+			jFrame.setVisible(true);
+			graphics=jFrame.getGraphics();
+			jb.addActionListener(this);
+			jFrame.addMouseMotionListener(this);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}	
+		}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	
+		
+		
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+	
+		j1.setText(String.valueOf(e.getX()));
+		j2.setText(String.valueOf(e.getY()));
+		graphics.drawOval(e.getX(),e.getY(),50,50);
+	}
+}
