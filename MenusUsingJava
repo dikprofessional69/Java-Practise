@@ -1,0 +1,43 @@
+package settings;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class MenuProgram {
+	JFrame jFrame;
+	JMenuBar jMenuBar;
+	JMenu fileJMenu,saveasJMenu;
+	JMenuItem open,save,s1,s2;
+	public static void main(String args[]) {
+		new MenuProgram();
+		
+	}
+	public MenuProgram(){
+		try {
+			jFrame=new JFrame("MENU EG");
+			jFrame.setSize(500,500);
+			
+			jMenuBar=new JMenuBar();
+			jFrame.setJMenuBar(jMenuBar);
+			
+			fileJMenu=new JMenu("File");
+			jMenuBar.add(fileJMenu);
+			
+			saveasJMenu=new JMenu("SAVE");
+			jMenuBar.add(saveasJMenu);
+			
+			open=new JMenuItem("Open");
+			fileJMenu.add(open);
+			save=new JMenuItem("Save");
+			fileJMenu.add(save);
+			
+			jFrame.setVisible(true);
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+	}
+}
