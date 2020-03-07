@@ -1,0 +1,45 @@
+package settings;
+
+import java.awt.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class View implements ActionListener{
+
+	public JFrame jFrame;
+	public JButton b1,b2,b3,b4,b5;
+	CardLayout card;
+	public static void main(String args[]) {
+		new View();
+	}
+	public View() {
+		try {
+		jFrame=new JFrame();
+		
+		jFrame.setSize(500, 500);
+		b1=new JButton("XXX");
+		b2=new JButton("YYY");
+		b3=new JButton("ZZZ");
+		card=new CardLayout(40,30);
+		jFrame.getContentPane().setLayout(card); 
+		jFrame.add("a",b1);
+		jFrame.add("b",b2);
+		jFrame.add("c",b3);
+		
+		jFrame.setVisible(true);
+		jFrame.setDefaultCloseOperation(jFrame.EXIT_ON_CLOSE);
+
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		b3.addActionListener(this);
+		}catch(Exception e) {
+			
+		}
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		card.next(jFrame.getContentPane());
+		
+	}
+}
