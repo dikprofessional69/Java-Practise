@@ -1,0 +1,34 @@
+package settings;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class View {
+
+	public JFrame jFrame;
+	public JButton b1,b2,b3,b4,b5;
+	public static void main(String args[]) {
+		new View();
+	}
+	public View() {
+		jFrame=new JFrame();
+		jFrame.getContentPane().setBackground(Color.green);
+		jFrame.setSize(500, 500);
+		b1=new JButton("Button 1");
+		b2=new JButton("Button 2");
+		b3=new JButton("Button 3");
+		b4=new JButton("Button 4");
+		b5=new JButton("Button 5");
+		
+		jFrame.add(b1,BorderLayout.NORTH);
+		jFrame.add(b2,BorderLayout.SOUTH);
+		jFrame.add(b3,BorderLayout.WEST);
+		jFrame.add(b4,BorderLayout.EAST);
+		jFrame.add(b5,BorderLayout.CENTER);
+		jFrame.setVisible(true);
+		jFrame.setDefaultCloseOperation(jFrame.EXIT_ON_CLOSE);
+	}
+}
