@@ -1,6 +1,7 @@
 package calculator;
 
 import java.awt.Button;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.*;
 
@@ -18,7 +19,9 @@ public class calc implements ActionListener,MouseMotionListener {
 	public calc(){
 		try {
 			jFrame=new JFrame("ADDER");
+			jFrame.getContentPane().setBackground(Color.CYAN);
 			jFrame.setSize(500,500);
+			
 			j1=new JTextField();
 			j2=new JTextField();
 			jb=new JButton("ADD");
