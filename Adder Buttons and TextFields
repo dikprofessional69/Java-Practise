@@ -1,0 +1,49 @@
+package calculator;
+
+import java.awt.Button;
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class calc implements ActionListener {
+	public JFrame jFrame;
+	public JTextField j1,j2;
+	public JButton jb;
+	
+	public static void main(String args[]) {
+	new calc();	
+	}
+	
+	public calc(){
+		try {
+			jFrame=new JFrame("ADDER");
+			jFrame.setSize(500,500);
+			j1=new JTextField();
+			j2=new JTextField();
+			jb=new JButton("ADD");
+					j1.setBounds(200,200,50,50);
+					j2.setBounds(260,200,50,50);
+					jb.setBounds(200,300,100,100);
+			jFrame.add(jb);
+			jFrame.add(j1);
+			jFrame.add(j2);
+			jFrame.setLayout(null);
+			jFrame.setVisible(true);
+			jb.addActionListener(this);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}	
+		}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		int a=Integer.parseInt(j1.getText());
+		int b=Integer.parseInt(j2.getText());
+		
+		if(e.getSource()==jb) {
+			int add=a+b;
+			j1.setText(String.valueOf(add));
+		}
+		
+	}
+}
