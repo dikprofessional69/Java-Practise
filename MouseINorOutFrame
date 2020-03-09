@@ -1,0 +1,54 @@
+package practise3;
+
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+public class MouseInOUT implements MouseListener{
+	public JTextField jTextField;
+	public static void main(String args[]) {
+	new MouseInOUT();	
+	}
+
+	public MouseInOUT() {
+		JFrame jFrame=new JFrame("XXX");
+		jTextField=new JTextField();
+		jTextField.setBounds(50, 50, 100, 50);
+		jFrame.setSize(500,500);
+		jFrame.add(jTextField);
+		jFrame.addMouseListener(this);
+		jFrame.setLayout(null);
+		jFrame.setVisible(true);
+	}
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		jTextField.setText("IN");
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		jTextField.setText("Out");
+	}
+
+}
