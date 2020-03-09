@@ -1,0 +1,36 @@
+package file;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class FileHandling {
+	public static void main(String args[]) {
+		try {
+			int r=0;
+			FileInputStream fileInputStream=new FileInputStream("C:\\Users\\ZinonYT\\eclipse-workspace\\practise3\\src\\practise3\\readme.txt");
+			BufferedInputStream bufferedInputStream=new BufferedInputStream(fileInputStream);
+			FileOutputStream fileOutputStream=new FileOutputStream("C:\\Users\\ZinonYT\\eclipse-workspace\\practise3\\src\\practise3\\savehere.txt");
+			BufferedOutputStream bufferedOutputStream=new BufferedOutputStream(fileOutputStream);
+			
+			while(true) {
+				r=bufferedInputStream.read();
+			
+				if(r==-1) {
+					break;
+					
+				}
+				System.out.print((char)r);
+				bufferedOutputStream.write(r);
+			}
+		bufferedInputStream.close();
+		fileInputStream.close();
+		bufferedOutputStream.close();
+		fileOutputStream.close();
+		}
+		catch(Exception exception) {
+			System.out.println(exception.getMessage());
+		}
+	}
+}
